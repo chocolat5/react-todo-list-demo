@@ -1,4 +1,4 @@
-# React Todo List (demo)
+# React Todo List
 
 This is just sample Todo app built with React, Webpack.  
 I created this for my learning.  
