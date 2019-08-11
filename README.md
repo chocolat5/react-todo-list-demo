@@ -7,8 +7,8 @@ I created this for my learning.
 
 # References
 
-@taniarascia
-[Getting Started with React - An Overview and Walkthrough Tutorial](https://www.taniarascia.com/getting-started-with-react/)
+[Getting Started with React - An Overview and Walkthrough Tutorial](https://www.taniarascia.com/getting-started-with-react/)  
+[@taniarascia](https://github.com/taniarascia)
 
 
 # License
