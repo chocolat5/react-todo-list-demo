@@ -8,7 +8,7 @@ I created this for my learning.
 The changes are as follows 
 
 * To Todo List from Name and Job List.
-* "Task" input is a required item. An error message show when clicking the "Add" button with the empty. 
+* "Task" `input` is a required item. An error message show when clicking the "Add" button with the empty. 
 
 ## References
 
