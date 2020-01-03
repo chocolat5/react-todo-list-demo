@@ -1,43 +1,34 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import List from './List';
 import Form from './Form';
 import '../styles/style.scss';
 
 
-class App extends Component {
-  state = {
-    todos: [],
+const App = () => {
+  const [todos, setTodos] = useState([]);
+
+  const removeTodo = index => {
+    const newTodos = todos.filter((todo, i) => {
+      return i !== index;
+    });
+    setTodos(newTodos);
   }
 
-  removeTodo = index => {
-    const { todos } = this.state;
-
-    this.setState({
-      todos: todos.filter((todo, i) => {
-        return i !== index;
-      }),
-    })
+  const handleSubmit = todo => {
+    setTodos([...todos, todo]);
   }
 
-  handleSubmit = todo => {
-    this.setState({ todos: [...this.state.todos, todo] });
-  }
-  
-  render () {
-    const { todos } = this.state;
-
-    return (
-      <div className="app">
-        <header className="app_header">
-          <h1>React Todo List</h1>
-        </header>
-        <main className="container">
-          <List todoData={todos} removeTodo={this.removeTodo} />
-          <Form handleSubmit={this.handleSubmit} />
-        </main>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="app">
+      <header className="app_header">
+        <h1>React Todo List</h1>
+      </header>
+      <main className="container">
+        <List todoData={todos} removeTodo={removeTodo} />
+        <Form handleSubmit={handleSubmit} />
+      </main>
+    </div>
+  );
+};
 
 export default App;

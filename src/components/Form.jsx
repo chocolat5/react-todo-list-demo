@@ -1,61 +1,51 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class Form extends Component {
-  constructor(props) {
-    super(props);
+const initialState = {
+  task: '',
+  memo: '',
+};
 
-    this.initialState = {
-      task: '',
-      memo: '',
-    }
+const Form = props => {
+  const [formData, setFormData] = useState(initialState);
 
-    this.state = this.initialState;
-  }
-
-  handleChange = event => {
+  const handleChange = event => {
     const { name, value } = event.target;
 
-    this.setState({
+    setFormData({
+      ...formData,
       [name]: value
     });
-  }
+  };
 
-  submitForm = (event) => {
+  const submitForm = event => {
     event.preventDefault();
-    if(this.state.task !== '') {
-      this.props.handleSubmit(this.state);
-      this.setState(this.initialState);
+    if (formData.task !== '') {
+      props.handleSubmit(formData);
+      setFormData(initialState);
     }
-  }
+  };
 
-  render() {
-    const { task, memo } = this.state;
-
-    return (
-      <form className="form" onSubmit={this.submitForm}>
-        <h2>Add New</h2>
-        <input
-          type="text"
-          name="task"
-          value={task}
-          placeholder="Task"
-          onChange={this.handleChange}
-          required
-          />
-        <input
-          type="text"
-          name="memo"
-          value={memo}
-          placeholder="Memo"
-          onChange={this.handleChange}
-          />
-        <input
-          type="submit"
-          value="Add"
-          />
-      </form>
-    );
-  }
-}
+  return (
+    <form className="form" onSubmit={submitForm}>
+      <h2>Add New</h2>
+      <input
+        type="text"
+        name="task"
+        value={formData.task}
+        placeholder="Task"
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="text"
+        name="memo"
+        value={formData.memo}
+        placeholder="Memo"
+        onChange={handleChange}
+      />
+      <input type="submit" value="Add" />
+    </form>
+  );
+};
 
 export default Form;
