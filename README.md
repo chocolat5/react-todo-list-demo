@@ -53,13 +53,6 @@ npm run dev
 [Getting Started with React - An Overview and Walkthrough Tutorial](https://www.taniarascia.com/getting-started-with-react/)  
 [@taniarascia](https://github.com/taniarascia)
 
-## Support
-
-The simplest way to show your support is by giving the project a star at GitHub 🌟  
-And I'm always appreciate to the bug report and your feedbacks.  
-Also you can support me as a [Sponsor](https://github.com/sponsors/chocolat5) 🫶
-
-Thank you for your support 💛
 
 ## Author
 
